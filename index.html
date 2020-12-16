@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>909 Emulator</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1>909 Emulator</h1>
+        <div id="background">
+            <div id="kickDrum">
+                <p id="text">kick</p>
+            </div>
+
+            <div id="snareDrum">
+                <p id="text">Snare</p>
+            </div>
+
+            <div id="closedHat">
+                <p id="text">Closed Hat</p>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+            
+                var metrome = document.createElement('audio');
+                metrome.setAttribute('src', 'metronome.wav')
+
+                var kickDrum = document.createElement('audio');
+                kickDrum.setAttribute('src', '909/bd01.wav');
+
+                var snareDrum = document.createElement('audio');
+                snareDrum.setAttribute('src', '909/sd01.wav');
+
+                var closedHat = document.createElement('audio');
+                closedHat.setAttribute('src', '909/hh01.wav');
+
+                var opentaaHat = document.createElement('audio');
+                closedHat.setAttribute('src', '909/hh01.wav');
+
+
+                $('body').keydown(function(e){
+                    var code = e.which
+                    if(code == 77){
+                        e.preventDefault()
+                        metrome.play()
+                    }
+                })
+
+
+                //KICK DRUM
+                $('body').keydown(function(e){
+                    var code = e.which
+                    if(code == 65){
+                        e.preventDefault()
+                        kickDrum.play()
+                    }
+                })
+                $('body').keydown(function(e){
+                    var code = e.which
+                    if(code == 65){
+                        e.preventDefault()
+                        $('#kickDrum').css('background-color', 'red')
+                    }
+                })
+                $('body').keyup(function(e){
+                    var code = e.which
+                    if(code == 65){
+                        e.preventDefault()
+                        $('#kickDrum').css({'background-color': "rgb(197, 179, 144)" })
+                    }
+                })
+
+                //SNARE DRUM
+                $('body').keydown(function(e){
+                    var code = e.which
+                    if(code == 83){
+                        e.preventDefault()
+                        snareDrum.play()
+                    }
+                })
+                $('body').keydown(function(e){
+                    var code = e.which
+                    if(code == 83){
+                        e.preventDefault()
+                        $('#snareDrum').css('background-color', 'red')
+                    }
+                })
+                $('body').keyup(function(e){
+                    var code = e.which
+                    if(code == 83){
+                        e.preventDefault()
+                        $('#snareDrum').css({'background-color': "rgb(197, 179, 144)" })
+                    }
+                })
+
+                //CLOSED HAT
+                $('body').keydown(function(e){
+                    var code = e.which
+                    if(code == 87){
+                        e.preventDefault()
+                        closedHat.play()
+                    }
+                })
+                $('body').keydown(function(e){
+                    var code = e.which
+                    if(code == 87){
+                        e.preventDefault()
+                        $('#closedHat').css('background-color', 'red')
+                    }
+                })
+                $('body').keyup(function(e){
+                    var code = e.which
+                    if(code == 87){
+                        e.preventDefault()
+                        $('#closedHat').css({'background-color': "rgb(197, 179, 144)" })
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
