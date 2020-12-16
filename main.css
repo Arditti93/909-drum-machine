@@ -1,0 +1,38 @@
+body{
+    font-size: 40px;
+    font-family: Helvetica;
+    background-color: lightblue;
+    line-height: 1.5m;
+    text-align: center;
+}
+
+#text{
+    color: rgb(87, 85, 82);
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+}
+
+#kickDrum{
+    margin-top: 20px;
+    background-color: rgb(197, 179, 144);
+    width: 60px;
+    height: 60px;
+}
+
+#snareDrum{
+    background-color: rgb(197, 179, 144);
+    width: 60px;
+    height: 60px;
+}
+
+#closedHat{
+    background-color: rgb(197, 179, 144);
+    width: 60px;
+    height: 60px;
+}
+
+#background{
+    background-color: wheat;
+    padding: 30px;
+}
