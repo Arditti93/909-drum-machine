@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
+body {
+    background-color: white;
+    font-family: 'Dosis', sans-serif;
+  }
+
+  h1 {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+
+  /*Page layout and containers*/
+  #container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  #sequencer {
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-around;
+  }
+  
+  .res-row {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .seq-key {
+    display: inline-flex; 
+    flex-direction: column; 
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+  }
+  
+  /*Sequencer styling*/
+  
+  .key {
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: #808080;
+    transition: all .07s ease;
+  }
+  
+  .key-select {
+    color: #FFF;
+    background-color: rgb(175, 159, 130);
+  }
+  
+  .drum-select {
+    background-color: orange;
+  }
+  
+  .active {
+    color: #ffaa02;
+    background: #0F0;
+    box-shadow: 0 0 5px #ffaa02;
+  }
+  
+  .light {
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transition: all .07s ease;
+  }
+  
+  .lit {
+    transform: scale(1.1);
+    background-color:orange;
+    box-shadow: 0 0 5px red;
+  }
+  
+  /*Playback controls*/
+
+  #controls {
+    display: flex;
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+    margin-top: 50px;
+    justify-content: space-around; 
+    background-color:orange;
+    padding: 15px;
+  }
+  
+  button {
+    background: #FFF;
+    border-radius: 10px;
+    text-align: center;
+    height: 50px;
+    width: 150px;
+    border: 2px solid #000;
+    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #bpm {
+    display: inline;
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
+    min-width: 150px;
+  }
+  
+  input {
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  /*Media queries... optimized for desktop browsers only*/
+  
+   @media (max-width: 500px) {
+     #controls {
+       flex-direction: column;
+     }
+  
+    .res-row {
+      width: 100%;
+    }
+  
+  
+    #play,
+    #submit {
+      margin-bottom: 10px;
+    }
+  
+    #controls {
+      margin-top: 20px;
+    }
+  
+   }

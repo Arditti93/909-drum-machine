@@ -1,124 +1,223 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>909 Emulator</title>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <h1>909 Emulator</h1>
-        <div id="background">
-            <div id="kickDrum">
-                <p id="text">kick</p>
-            </div>
+  <head>
 
-            <div id="snareDrum">
-                <p id="text">Snare</p>
-            </div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic 909</title>
+    <link rel="stylesheet" href="css/style.css" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
 
-            <div id="closedHat">
-                <p id="text">Closed Hat</p>
-            </div>
-        </div>
+  </head>
+  <body>
+    <h1>909 Emulator</h1>
+    <p>Sequencer Instructions
+    To programme a pattern into the 16 step sequencer, select which drum you would like to programme by clicking on its button. when selected the button will turn orange
+    To start with select the KICK 1 button then click on the numbers '1' '5' '9' '13', then click play
+    </p>
 
-        <script>
-            $(document).ready(function(){
+
+      <div id="container">
+        <section id="controls">
+          <h2>A = Kick 1</h2>
+          <h2>W = Kick 2</h2>
+          <h2>S = Snare</h2>
+          <h2>E = Closed Hat</h2>
+          <h2>D = Open Hat</h2>
+          <h2>R = Clap</h2>
+
+          <button id="play">PLAY</button>
+          <button id="stop">STOP</button>
+          <input type="number" min="40" max="400" />
+          BPM
+        </section> 
+        <section id="drum-selector">
+          <div class="res-row">
+            <button id="kick1" data-drum="1">KICK 1 </button>
+            <button id="kick" data-drum="2">KICK 2 </button>
+            <button id="snare" data-drum="3">SNARE </button>
+            <button id="hat" data-drum="4">CLOSED HAT </button>
+            <button id="hat2" data-drum="5">OPEN HAT </button>
+            <button id="clap" data-drum="6">CLAP </button>
+          </div>
+        </section>
+
+        <!-- Kick 1 -->
+        <audio src="audio/bd01.wav" data-note="1a"></audio>
+        <audio src="audio/bd01.wav" data-note="1b"></audio>
+
+        <!-- Kick 2 -->
+        <audio src="audio/bd02.wav" data-note="2a"></audio>
+        <audio src="audio/bd02.wav" data-note="2b"></audio>
+
+        <!-- Snare -->
+        <audio src="audio/sd05.wav" data-note="3a"></audio>
+        <audio src="audio/sd05.wav" data-note="3b"></audio>
+
+        <!-- Closed Hat -->
+        <audio src="audio/hh01.wav" data-note="4a"></audio>
+        <audio src="audio/hh01.wav" data-note="4b"></audio>
+
+        <!--Open Hat  -->
+        <audio src="audio/oh01.wav" data-note="5a"></audio>
+        <audio src="audio/oh01.wav" data-note="5b"></audio>  
+
+        <!--clap  -->
+        <audio src="audio/cp02.wav" data-note="6a"></audio>
+        <audio src="audio/cp02.wav" data-note="6b"></audio>  
+
+        <section id="sequencer">
+
+          <div class="res-row">
+            <div class="seq-key">
+              <div class="light" data-index="0"></div>
+              <div class="key" id="0" data-index="0">1</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="1"></div>
+              <div class="key" id="1" data-index="1">2</div>
+            </div>
+            <div class="seq-key" >
+              <div class="light" data-index="2"></div>
+              <div class="key" id="2" data-index="2">3</div>
+            </div>
+            <div class="seq-key" >
+              <div class="light" data-index="3"></div>
+              <div class="key" id="3" data-index="3">4</div>
+            </div>
+          </div>
+
+          <div class="res-row">
+            <div class="seq-key">
+              <div class="light" data-index="4"></div>
+              <div class="key" id="4" data-index="4">5</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="5"></div>
+              <div class="key" id="5" data-index="5">6</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="6"></div>
+              <div class="key" id="6" data-index="6">7</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="7"></div>
+              <div class="key" id="7" data-index="7">8</div>
+            </div>
+          </div>
+
+          <div class="res-row">
+            <div class="seq-key">
+              <div class="light" data-index="8"></div>
+              <div class="key" id="8" data-index="8">9</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="9"></div>
+              <div class="key" id="9" data-index="9">10</div>
+            </div>
+            <div class="seq-key" >
+              <div class="light" data-index="10"></div>
+              <div class="key" id="10" data-index="10">11</div>
+            </div>
+            <div class="seq-key" >
+              <div class="light" data-index="11"></div>
+              <div class="key" id="11" data-index="11">12</div>
+            </div>
+          </div>
+
+          <div class="res-row">
+            <div class="seq-key">
+              <div class="light" data-index="12"></div>
+              <div class="key" id="12" data-index="12">13</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="13"></div>
+              <div class="key" id="13" data-index="13">14</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="14"></div>
+              <div class="key" id="14" data-index="14">15</div>
+            </div>
+            <div class="seq-key">
+              <div class="light" data-index="15"></div>
+              <div class="key" id="15" data-index="15">16</div>
+            </div>
+          </div>
+
+
+        </section>
+     </div>
+    <script>
+      $(document).ready(function() {
+
+          var kickDrum = document.createElement('audio');
+          kickDrum.setAttribute('src', 'audio/bd01.wav');
+
+          var kickDrum2 = document.createElement('audio');
+          kickDrum2.setAttribute('src', 'audio/bd02.wav');
+
+          var snare = document.createElement('audio');
+          snare.setAttribute('src', 'audio/sd05.wav');
+
+          var clHat = document.createElement('audio');
+          clHat.setAttribute('src', 'audio/hh01.wav');
+
+          var openHat = document.createElement('audio');
+          openHat.setAttribute('src', 'audio/oh01.wav');
+
+          var clap = document.createElement('audio');
+          clap.setAttribute('src', 'audio/cp02.wav');
+
+            $('body').keydown(function(e){
+                        var code = e.which
+                        if(code == 65){
+                            e.preventDefault()
+                            kickDrum.play()
+                        }
+                    })
+
+            $('body').keydown(function(e){
+                        var code = e.which
+                        if(code == 87){
+                            e.preventDefault()
+                            kickDrum2.play()
+                        }
+                    })
+
+            $('body').keydown(function(e){
+                        var code = e.which
+                        if(code == 83){
+                            e.preventDefault()
+                            snare.play()
+                        }
+                    }) 
+
+            $('body').keydown(function(e){
+                        var code = e.which
+                        if(code == 69){
+                            e.preventDefault()
+                            clHat.play()
+                        }
+                    })
+
+            $('body').keydown(function(e){
+                        var code = e.which
+                        if(code == 68){
+                            e.preventDefault()
+                            openHat.play()
+                        }
+                    }) 
             
-                var metrome = document.createElement('audio');
-                metrome.setAttribute('src', 'metronome.wav')
+            $('body').keydown(function(e){
+                        var code = e.which
+                        if(code == 82){
+                            e.preventDefault()
+                            clap.play()
+                        }
+                    })
+        });
 
-                var kickDrum = document.createElement('audio');
-                kickDrum.setAttribute('src', '909/bd01.wav');
-
-                var snareDrum = document.createElement('audio');
-                snareDrum.setAttribute('src', '909/sd01.wav');
-
-                var closedHat = document.createElement('audio');
-                closedHat.setAttribute('src', '909/hh01.wav');
-
-                var opentaaHat = document.createElement('audio');
-                closedHat.setAttribute('src', '909/hh01.wav');
-
-
-                $('body').keydown(function(e){
-                    var code = e.which
-                    if(code == 77){
-                        e.preventDefault()
-                        metrome.play()
-                    }
-                })
-
-
-                //KICK DRUM
-                $('body').keydown(function(e){
-                    var code = e.which
-                    if(code == 65){
-                        e.preventDefault()
-                        kickDrum.play()
-                    }
-                })
-                $('body').keydown(function(e){
-                    var code = e.which
-                    if(code == 65){
-                        e.preventDefault()
-                        $('#kickDrum').css('background-color', 'red')
-                    }
-                })
-                $('body').keyup(function(e){
-                    var code = e.which
-                    if(code == 65){
-                        e.preventDefault()
-                        $('#kickDrum').css({'background-color': "rgb(197, 179, 144)" })
-                    }
-                })
-
-                //SNARE DRUM
-                $('body').keydown(function(e){
-                    var code = e.which
-                    if(code == 83){
-                        e.preventDefault()
-                        snareDrum.play()
-                    }
-                })
-                $('body').keydown(function(e){
-                    var code = e.which
-                    if(code == 83){
-                        e.preventDefault()
-                        $('#snareDrum').css('background-color', 'red')
-                    }
-                })
-                $('body').keyup(function(e){
-                    var code = e.which
-                    if(code == 83){
-                        e.preventDefault()
-                        $('#snareDrum').css({'background-color': "rgb(197, 179, 144)" })
-                    }
-                })
-
-                //CLOSED HAT
-                $('body').keydown(function(e){
-                    var code = e.which
-                    if(code == 87){
-                        e.preventDefault()
-                        closedHat.play()
-                    }
-                })
-                $('body').keydown(function(e){
-                    var code = e.which
-                    if(code == 87){
-                        e.preventDefault()
-                        $('#closedHat').css('background-color', 'red')
-                    }
-                })
-                $('body').keyup(function(e){
-                    var code = e.which
-                    if(code == 87){
-                        e.preventDefault()
-                        $('#closedHat').css({'background-color': "rgb(197, 179, 144)" })
-                    }
-                })
-            })
-        </script>
-    </body>
+    </script>
+  </body>
 </html>
