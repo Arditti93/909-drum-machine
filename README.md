@@ -1,2 +1,2 @@
-# 909 drum machine
+# 909 Drum Machine
 909 drum machine emulator with JQuery
