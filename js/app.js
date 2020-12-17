@@ -8,10 +8,6 @@ document.addEventListener('DOMContentLoaded', function(){
     var lights = document.querySelectorAll('.light');
     var badInput = document.querySelector('#badinput');
     
-    var rhythmBank = [
-        [[2],[],[],[],[2],[],[2],[],[],[],[2],[],[2],[],[2],[]],
-      ];
-  
 
     var userSequence = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
   
