@@ -1,6 +1,6 @@
 # Roland 909 Drum Machine Emulator
 
-### 909 drum machine emulator with JQuery, Vanilla JavaScript, HTML and CSS 
+### 909 drum machine emulator created with JQuery, Vanilla JavaScript, HTML and CSS 
 
 **[PLAY HERE](https://arditti93.github.io/909-drum-machine/)**
 
