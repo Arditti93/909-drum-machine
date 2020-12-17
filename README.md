@@ -2,7 +2,7 @@
 
 ### 909 drum machine emulator created with JQuery, Vanilla JavaScript, HTML and CSS 
 
-**[PLAY HERE](https://arditti93.github.io/Roland-909-Drum-Machine-Emulator/){:target="_blank"}**
+**[PLAY HERE](https://arditti93.github.io/Roland-909-Drum-Machine-Emulator/)**
 
 ### Approach 
 I used HTML global data attributes. Each sequencer key has a "data-index" attribute which corresponds to the index it represents in the audio sequencer arrays. Each audio sample also has its own "data-note" attribute. When any of the sequencer keys are toggled in the user controls, they perform two actions. First, they toggle a CSS class on that key to indicate that whether its "active" or not. Second, a function takes the "data-index" value of the sequencer key and looks for the corresponding step in the user's sequencer array. Then, depending on whether that key is "active", it either pushes or pops an audio sample's "data" value to/from the array at that index.
