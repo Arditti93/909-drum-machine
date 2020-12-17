@@ -1,6 +1,7 @@
 # Roland 909 Drum Machine Emulator
 
 ### 909 drum machine emulator with JQuery, Vanilla JavaScript, HTML and CSS 
+
 [PLAY HERE](https://arditti93.github.io/909-drum-machine/)
 
 ### Approach 
@@ -13,4 +14,4 @@ I used HTML global data attributes. Each sequencer key has a "data-index" attrib
 4. To programme different beats, change which numbers and drums are selected.
 5. The key controls are listed on the orange pannel.
 
-
+![909](909.gif)
